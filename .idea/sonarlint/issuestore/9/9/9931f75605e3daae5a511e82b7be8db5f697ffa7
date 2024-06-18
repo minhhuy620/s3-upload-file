@@ -1,0 +1,14 @@
+
+R
+java:S2387"7"logger" is the name of a field in "GenericFilterBean".(ò­ð¿ûÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¤óªÐ
+V	java:S125."<This block of commented-out lines of code should be removed.(ÎÆê¼þÿÿÿÿ
++
+java:S34574"Not enough arguments.(â©Éˆ
+V	java:S125?"<This block of commented-out lines of code should be removed.(‰¯Á†úÿÿÿÿ
+[
+java:S1128"@Remove this unused import 'io.jsonwebtoken.ExpiredJwtException'.(ÀÅÁ³ûÿÿÿÿ
+\
+java:S1128"ARemove this unused import 'org.springframework.http.HttpHeaders'.(ãŸñ×úÿÿÿÿ
+s
+java:S1128"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.(¶…¥à

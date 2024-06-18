@@ -1,0 +1,48 @@
+your_aws:
+  your_access: access
+  your_bucket:
+    your_name: name
+  your_secret: secret
+
+jwt:
+  expiration: 1800000
+  header: Authorization
+  refreshExpirationMs: 3600000
+  secret: mySecret
+logging:
+  level:
+    org:
+      hibernate:
+        stat: debug
+        type: trace
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    password: 123456
+    platform: mysql
+    url: jdbc:mysql://14.225.207.167:3306/development
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+  mvc:
+    dispatch-options-request: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+dev-env:
+  openapi:
+    dev-url: http://127.0.0.1:8080
+spring-doc:
+  use-fqn: true
+
+

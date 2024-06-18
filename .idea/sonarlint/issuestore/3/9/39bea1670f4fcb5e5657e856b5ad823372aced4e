@@ -1,0 +1,21 @@
+
+Q	java:S125"<This block of commented-out lines of code should be removed.(äÍíÚ
+Q	java:S125"<This block of commented-out lines of code should be removed.(¹®´
+P
+java:S1128"5Remove this unused import 'blog.be.dtos.ApiResponse'.(„üîßùÿÿÿÿ
+W
+java:S1128"<Remove this unused import 'blog.be.service.CategoryService'.(Şšõùÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
+_
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ
+p
+java:S1128"URemove this unused import 'org.springframework.security.access.prepost.PreAuthorize'.(ˆ†×ùÿÿÿÿ
+W
+java:S1128"<Remove this unused import 'javax.persistence.EntityManager'.(ğàËÒıÿÿÿÿ
+Y
+java:S1128"CRemove this unused import 'javax.persistence.EntityManagerFactory'.(îÜğ
+U
+java:S1128":Remove this unused import 'javax.persistence.Persistence'.(›²ö¾ıÿÿÿÿ
+J
+java:S1128"4Remove this unused import 'javax.persistence.Query'.(¢ğö

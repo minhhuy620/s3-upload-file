@@ -1,0 +1,20 @@
+
+Q	java:S125#"<This block of commented-out lines of code should be removed.(…š¿‹
+h	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ãëÉşÿÿÿÿ
+b
+java:S1612Q"LReplace this lambda with method reference 'AbstractHttpConfigurer::disable'.(â¥ÏÕ
+Q	java:S125V"<This block of commented-out lines of code should be removed.(ßâ½™
+\
+java:S1128"ARemove this unused import 'org.springframework.http.HttpHeaders'.(ãŸñ×úÿÿÿÿ
+[
+java:S1128"@Remove this unused import 'org.springframework.http.HttpMethod'.(Ê¨Ä¡øÿÿÿÿ
+z
+java:S1128"dRemove this unused import 'org.springframework.security.config.annotation.web.builders.WebSecurity'.(–ëğ
+X
+java:S1128"BRemove this unused import 'org.springframework.web.util.WebUtils'.(Í­³
+L
+java:S1128"6Remove this unused import 'javax.servlet.http.Cookie'.(«Şªü
+X
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…
+K
+java:S1068"0Remove this unused "jwtTokenUtil" private field.(Ïºÿ™şÿÿÿÿ

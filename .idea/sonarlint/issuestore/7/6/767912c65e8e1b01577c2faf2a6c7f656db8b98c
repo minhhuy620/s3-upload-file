@@ -1,0 +1,7 @@
+
+V
+java:S4684 "@Replace this persistent entity with a simple POJO or DTO object.(ø“®
+P
+java:S1128"5Remove this unused import 'blog.be.dtos.ApiResponse'.(„üîßùÿÿÿÿ
+O
+java:S1128"4Remove this unused import 'blog.be.dtos.CommentDto'.( õÖûÿÿÿÿ
