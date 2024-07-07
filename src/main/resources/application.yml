@@ -41,7 +41,7 @@ spring:
       max-request-size: 50MB
 dev-env:
   openapi:
-    dev-url: http://127.0.0.1:8080
+    dev-url: http://14.225.207.167:8080
 spring-doc:
   use-fqn: true
 
