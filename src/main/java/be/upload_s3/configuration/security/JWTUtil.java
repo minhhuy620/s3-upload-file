@@ -64,7 +64,7 @@ public class JWTUtil{
 
     //-------------------------------------------Cookie--------------------------------------/
     public ResponseCookie generateTokenToCookie(String token) {
-        ResponseCookie cookie = ResponseCookie.from(cookieName, token).path("/").httpOnly(false).secure(true).sameSite("Lax").build();
+        ResponseCookie cookie = ResponseCookie.from(cookieName, token).path("/").httpOnly(false).secure(false).sameSite("Lax").build();
         return cookie;
     }
 

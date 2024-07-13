@@ -67,7 +67,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-                .antMatchers("/swagger-ui.html","/swagger-ui/**","/v3/**").permitAll()
                 .anyRequest().authenticated().and().cors().configurationSource(corsConfigurationSource);
         httpSecurity.headers().frameOptions().sameOrigin().cacheControl();
         httpSecurity.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
