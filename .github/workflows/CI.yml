@@ -47,5 +47,6 @@ jobs:
           push: true
           tags: latest
           file: ./Dockerfile
+          registry: docker.io
           
           
