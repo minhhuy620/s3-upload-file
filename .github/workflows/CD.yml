@@ -1,0 +1,56 @@
+name: CD - Deploy to EC2 AWS
+
+on:
+  workflow_run:
+    workflows: [ "Java CI with Maven" ] 
+    types: [ completed ]
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Only deploy if CI passed
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # Login to Docker Hub
+            echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
+            # Pull latest image from Docker Hub
+            docker pull huyvm62/s3-upload-file:latest
+
+            # Stop and remove old container if it exists
+            docker stop s3-upload-file || true
+            docker rm   s3-upload-file || true
+
+            # Run new container
+            docker run -d \
+              --name s3-upload-file \
+              --restart always \
+              -p 8080:8080 \
+              -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+              -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+              -e AWS_REGION=${{ secrets.AWS_REGION }} \
+              huyvm62/s3-upload-file:latest
+
+            # Clean up unused images to free disk space
+            docker image prune -f
+
+      - name: Verify deployment
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker ps | grep s3-upload-file
+            echo "Deployment successful!"
