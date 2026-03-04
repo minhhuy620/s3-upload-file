@@ -24,9 +24,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up JDK 11
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
@@ -34,7 +34,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-    - name: Submit dependency snapshot
+    - name: Pass Security
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
@@ -43,3 +43,21 @@ jobs:
           -H "Content-Type: application/json" \
           -d @dependency-snapshot.json \
           https://api.github.com/repos/${{ github.repository }}/dependency-graph/snapshots
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v4
+      with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+          image: huyvm62/s3-upload-file
+          push: true
+          tags: latest
+          file: ./Dockerfile
+          
+      env:
+          
+          
