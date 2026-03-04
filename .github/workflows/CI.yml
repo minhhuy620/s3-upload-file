@@ -45,7 +45,7 @@ jobs:
       with:
           image: huyvm62/s3-upload-file
           push: true
-          tags: latest
+          tags: huyvm62/s3-upload-file:latest
           file: ./Dockerfile
           registry: docker.io
           
