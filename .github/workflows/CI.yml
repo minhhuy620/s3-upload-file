@@ -58,6 +58,4 @@ jobs:
           tags: latest
           file: ./Dockerfile
           
-      env:
-          
           
