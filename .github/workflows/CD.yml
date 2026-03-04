@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
 
-    # Only deploy if CI passed
+    # Deploy if CI passed
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
